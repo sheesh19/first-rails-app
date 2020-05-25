@@ -1,0 +1,40 @@
+<h2>Contact Us</h2>
+
+<!-- DOES NOT DISPLAY TO USER -->
+<!-- ER + TAB -->
+
+<%# 1 + 1 %>
+
+
+<!-- DISPLAYS TO USER -->
+<!-- PE + TAB -->
+
+<%#= 1 + 1 %>
+
+
+<%# members = ["harry", "ron", "hermione"] %>
+
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+
+<!-- COMMON DEBUGGING -->
+
+<%# raise %>
+
+<a href="/">Back to Home</a>
+<br>
+<%= link_to "Back to Home (Ruby)", root_path %>
+<br>
+<%= link_to "Back to About (Ruby)", about_path %>
+<br>
+<%= link_to "Back to Contact (Ruby)", contact_us_path %>
+
+
+<form action="/contact" method="get">
+  <input type="text" value="<%= params[:member] %>" name="member" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
